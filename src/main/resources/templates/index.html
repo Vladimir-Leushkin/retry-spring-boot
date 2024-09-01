@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div class="container">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Message</title>
+    </div>
+</head>
+<body>
+
+<div class="container mt-5">
+    <form class="row" th:action="@{/message}" th:object="${message}" method="get">
+        <div class="col-auto">
+            <label for="message" class="col-form-label">Message</label>
+            <input class="form-control" id="message" name="message" placeholder="Message" th:value="${message}"
+                   type="text">
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-success">Send</button>
+        </div>
+    </form>
+</div>
+
+<div class="mb-3">
+    <label for="message" class="form-label" th:text="${response}">Response</label>
+</div>
+
+</body>
+</html>
